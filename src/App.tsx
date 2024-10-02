@@ -19,14 +19,7 @@ function App() {
   }, []);
 
   function createTodo() {
-    client.models.Todo.create({ content: window.prompt("Todo content") }).then(
-      (response) => {
-        if (response.data !== null) {
-          response.data;
-          setTodos((prev) => [...prev, response.data]);
-        }
-      }
-    );
+    client.models.Todo.create({ content: window.prompt("Todo content") });
   }
 
   function deleteTodo(id: string) {
